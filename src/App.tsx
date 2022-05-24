@@ -21,7 +21,7 @@ function App() {
 
   useEffect(fetchData, []);
 
-  setInterval(fetchData, 6000);
+  setInterval(fetchData, 6000, []);
 
   return (
     <main>
