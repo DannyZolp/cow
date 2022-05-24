@@ -19,9 +19,10 @@ function App() {
       });
   };
 
-  useEffect(fetchData, []);
-
-  setInterval(fetchData, 6000, []);
+  useEffect(() => {
+    setInterval(fetchData, 6000);
+    fetchData();
+  }, []);
 
   return (
     <main>
