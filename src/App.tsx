@@ -33,7 +33,7 @@ function App() {
       </div>
       <h1>Future Cows</h1>
       <h2>
-        <code className={change > 0 ? "positive" : "negative"}>${price.toLocaleString()}</code>
+        <code className={change > 0 ? "positive" : "negative"}>${price.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</code>
       </h2>
       <h3>
         {change > 0 ? "Up" : "Down"} {change}%
