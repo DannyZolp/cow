@@ -13,7 +13,7 @@ function App() {
     )
       .then((res) => res.json())
       .then((json) => {
-        setPrice(parseFloat(json[0].last as string));
+        setPrice(parseFloat((json[0].last as string).replace(".", ",")));
         setChange(parseFloat(json[0].change as string));
         setLoading(false);
       });
@@ -33,7 +33,7 @@ function App() {
       </div>
       <h1>Future Cows</h1>
       <h2>
-        <code className={change > 0 ? "positive" : "negative"}>${price}</code>
+        <code className={change > 0 ? "positive" : "negative"}>${price.toLocaleString()}</code>
       </h2>
       <h3>
         {change > 0 ? "Up" : "Down"} {change}%
