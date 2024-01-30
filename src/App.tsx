@@ -13,7 +13,7 @@ function App() {
     )
       .then((res) => res.json())
       .then((json) => {
-        setPrice(parseFloat(json[0].last as string));
+        setPrice(parseInt((json[0].last as string).replace(".", "")));
         setChange(parseFloat(json[0].change as string));
         setLoading(false);
       });
